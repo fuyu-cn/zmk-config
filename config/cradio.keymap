@@ -27,6 +27,31 @@
         };
     };
 
+    combos {
+        compatible = "zmk,combos";
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <33 16>;
+            layers = <0>;
+        };
+
+        backspace {
+            bindings = <&kp LC(DEL)>;
+            key-positions = <9 8>;
+        };
+
+        escape {
+            bindings = <&kp ESCAPE>;
+            key-positions = <1 0>;
+        };
+
+        nosticky {
+            bindings = <&kp F24>;
+            key-positions = <33 30>;
+        };
+    };
+
     keymap {
         compatible = "zmk,keymap";
 

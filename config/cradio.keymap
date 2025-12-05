@@ -37,7 +37,7 @@
         };
 
         backspace {
-            bindings = <&kp LC(DEL)>;
+            bindings = <&kp LC(BACKSPACE)>;
             key-positions = <9 8>;
         };
 

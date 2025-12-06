@@ -82,9 +82,9 @@
             display-name = "Left Layer";
             bindings = <
 &kp EXCLAMATION  &kp AT_SIGN   &kp HASH          &kp DOLLAR      &kp PRCNT    &kp CARET       &kp AMPS              &kp ASTERISK           &kp PLUS          &kp DOUBLE_QUOTES
-&sk LEFT_GUI     &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &kp PRCNT    &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp SEMICOLON
+&sk LEFT_GUI     &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &kp EQUAL    &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp SEMICOLON
 &kp GRAVE        &trans        &trans            &trans          &trans       &kp LESS_THAN   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &kp BACKSLASH
-                                                 &trans          &trans       &kp MINUS       &kp UNDERSCORE
+                                                 &none           &none        &kp MINUS       &kp UNDERSCORE
             >;
         };
 

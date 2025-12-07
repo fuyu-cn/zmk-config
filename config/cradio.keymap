@@ -16,14 +16,23 @@
             require-prior-idle-ms = <100>;
             bindings = <&kp>, <&kp>;
         };
+
+        vidshot: vidshot {
+            compatible = "zmk,behavior-mod-morph";
+            label = "VIDSHOT";
+            bindings = <&kp LG(LS(NUMBER_4))>, <&kp LG(LS(N5))>;
+
+            #binding-cells = <0>;
+            mods = <(MOD_LCTL|MOD_LSFT|MOD_LALT|MOD_LGUI|MOD_RSFT)>;
+        };
     };
 
     conditional_layers {
         compatible = "zmk,conditional-layers";
 
         tri_layer {
-            if-layers = <2 1>;
-            then-layer = <3>;
+            if-layers = <3 2>;
+            then-layer = <4>;
         };
     };
 
@@ -63,6 +72,17 @@
             layers = <0>;
             require-prior-idle-ms = <1000>;
         };
+
+        sh_enter {
+            bindings = <&kp LS(ENTER)>;
+            key-positions = <16 32>;
+        };
+
+        MACDEL {
+            bindings = <&kp LA(BACKSPACE)>;
+            key-positions = <8 9>;
+            layers = <1>;
+        };
     };
 
     keymap {
@@ -74,7 +94,16 @@
 &kp Q  &kp W  &kp F  &kp P        &kp B        &kp J            &kp L       &kp U      &kp Y    &kp APOS
 &kp A  &kp R  &kp S  &kp T        &kp G        &kp M            &kp N       &kp E      &kp I    &kp O
 &kp Z  &kp X  &kp C  &kp D        &kp V        &kp K            &kp H       &kp COMMA  &kp DOT  &kp FSLH
-                     &lt 1 SPACE  &lt 2 TAB    &kp RIGHT_SHIFT  &lt 3 BSPC
+                     &lt 2 SPACE  &lt 3 TAB    &kp RIGHT_SHIFT  &lt 4 BSPC
+            >;
+        };
+
+        MACDEF {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans  &trans           &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans           &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans           &trans  &trans  &trans
+                        &trans  &trans    &trans  &lt 5 BACKSPACE
             >;
         };
 
@@ -105,6 +134,15 @@
 &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &kp F11         &kp F12          &sk LEFT_SHIFT  &sk LEFT_CONTROL  &sk LEFT_ALT  &sk LEFT_GUI
 &bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK   &sys_reset    &bootloader
                                         &kp C_PLAY    &kp C_STOP      &none            &none
+            >;
+        };
+
+        MACTRI {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &vidshot  &trans  &trans  &trans  &trans
+                        &trans  &trans    &trans    &trans
             >;
         };
     };

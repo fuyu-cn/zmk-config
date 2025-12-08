@@ -27,14 +27,7 @@
         };
     };
 
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-
-        tri_layer {
-            if-layers = <3 2>;
-            then-layer = <4>;
-        };
-    };
+    conditional_layers { compatible = "zmk,conditional-layers"; };
 
     combos {
         compatible = "zmk,combos";
@@ -42,7 +35,7 @@
         enter {
             bindings = <&kp ENTER>;
             key-positions = <33 16>;
-            layers = <0>;
+            layers = <0 1>;
         };
 
         backspace {
@@ -69,19 +62,41 @@
         bootloader {
             bindings = <&bootloader>;
             key-positions = <0 31>;
-            layers = <0>;
+            layers = <0 1>;
             require-prior-idle-ms = <1000>;
         };
 
         sh_enter {
             bindings = <&kp LS(ENTER)>;
             key-positions = <16 32>;
+            layers = <0 1>;
         };
 
         MACDEL {
             bindings = <&kp LA(BACKSPACE)>;
             key-positions = <8 9>;
             layers = <1>;
+        };
+
+        reset {
+            bindings = <&sys_reset>;
+            key-positions = <0 30>;
+        };
+    };
+
+    macros {
+        defbt0: defbt0 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0 &to 0>;
+            label = "DEFBT0";
+        };
+
+        btmac1: btmac1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &to 1>;
+            label = "BTMAC1";
         };
     };
 
@@ -112,7 +127,7 @@
             bindings = <
 &kp EXCLAMATION  &kp AT_SIGN   &kp HASH          &kp DOLLAR      &kp PRCNT    &kp CARET       &kp AMPS              &kp ASTERISK           &kp EQUAL         &kp PLUS
 &sk LEFT_GUI     &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &kp EQUAL    &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp SEMICOLON
-&kp GRAVE        &trans        &trans            &trans          &trans       &kp LESS_THAN   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &kp BACKSLASH
+&kp GRAVE        &trans        &trans            &to 0           &to 1        &kp LESS_THAN   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &kp BACKSLASH
                                                  &none           &none        &kp MINUS       &kp UNDERSCORE
             >;
         };
@@ -132,7 +147,7 @@
             bindings = <
 &kp F1      &kp F2        &kp F3        &kp F4        &kp F5          &kp F6           &kp F7          &kp F8            &kp F9        &kp F10
 &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &kp F11         &kp F12          &sk LEFT_SHIFT  &sk LEFT_CONTROL  &sk LEFT_ALT  &sk LEFT_GUI
-&bt BT_CLR  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3    &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK   &sys_reset    &bootloader
+&bt BT_CLR  &defbt0       &btmac1       &bt BT_SEL 2  &bt BT_SEL 3    &kp PRINTSCREEN  &kp SCROLLLOCK  &kp PAUSE_BREAK   &sys_reset    &bootloader
                                         &kp C_PLAY    &kp C_STOP      &none            &none
             >;
         };

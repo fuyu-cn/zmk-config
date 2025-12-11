@@ -152,12 +152,13 @@
             >;
         };
 
-        MACTRI {
+        mac_tri {
+            display-name = "Tri Layer";
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans    &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &vidshot  &trans  &trans  &trans  &trans
-                        &trans  &trans    &trans    &trans
+&kp F1      &kp F2        &kp F3        &kp F4        &kp F5          &kp F6    &kp F7          &kp F8            &kp F9        &kp F10
+&kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &kp F11         &kp F12   &sk LEFT_SHIFT  &sk LEFT_CONTROL  &sk LEFT_ALT  &sk LEFT_GUI
+&bt BT_CLR  &defbt0       &btmac1       &bt BT_SEL 2  &bt BT_SEL 3    &vidshot  &kp SCROLLLOCK  &kp PAUSE_BREAK   &sys_reset    &bootloader
+                                        &kp C_PLAY    &kp C_STOP      &none     &none
             >;
         };
     };

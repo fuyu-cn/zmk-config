@@ -115,10 +115,10 @@
 
         MACDEF {
             bindings = <
-&trans  &trans  &trans  &trans  &trans    &trans  &trans           &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans           &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans    &trans  &trans           &trans  &trans  &trans
-                        &trans  &trans    &trans  &lt 5 BACKSPACE
+&trans  &trans  &trans  &trans  &trans    &trans  &trans                    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans                    &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans    &trans  &trans                    &trans  &trans  &trans
+                        &trans  &trans    &to 5   &mt LEFT_SHIFT BACKSPACE
             >;
         };
 

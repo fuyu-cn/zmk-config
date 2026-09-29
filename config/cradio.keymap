@@ -41,7 +41,19 @@
         };
     };
 
-    conditional_layers { compatible = "zmk,conditional-layers"; };
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        win_system {
+            if-layers = <2 3>;
+            then-layer = <8>;
+        };
+
+        mac_system {
+            if-layers = <6 7>;
+            then-layer = <8>;
+        };
+    };
 
     combos {
         compatible = "zmk,combos";
@@ -163,8 +175,8 @@
             bindings = <
 &kp N1            &kp N2        &kp N3        &kp N4          &kp N5       &kp N6          &kp N7                &kp N8                 &kp N9            &kp N0
 &sk LEFT_CONTROL  &sk LEFT_ALT  &sk LEFT_GUI  &sk LEFT_SHIFT  &kp EQUAL    &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp SEMICOLON
-&kp LC(Z)         &kp LC(Y)     &trans        &to 0           &to 1        &kp LESS_THAN   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &kp BACKSLASH
-                                              &none           &none        &kp MINUS       &kp UNDERSCORE
+&kp LC(Z)         &kp LC(Y)     &trans        &trans          &trans       &kp LESS_THAN   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &kp BACKSLASH
+                                              &none           &mo 3        &kp MINUS       &kp UNDERSCORE
             >;
         };
 
@@ -174,7 +186,7 @@
 &kp EXCLAMATION   &kp AT_SIGN   &kp HASH      &kp DOLLAR      &kp PERCENT  &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp EQUAL  &kp PLUS
 &sk LEFT_CONTROL  &sk LEFT_ALT  &sk LEFT_GUI  &sk LEFT_SHIFT  &trans       &kp LEFT   &kp DOWN       &kp UP        &kp RIGHT  &kp COLON
 &trans            &kp LC(X)     &kp LC(C)     &kp LC(V)       &trans       &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &kp PIPE
-                                              &none           &none        &kp ENTER  &kp EQUAL
+                                              &mo 2           &none        &kp ENTER  &kp EQUAL
             >;
         };
 
@@ -183,7 +195,7 @@
             bindings = <
 &kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6    &kp F7          &kp F8           &kp F9        &kp F10
 &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &kp F11       &kp F12   &sk LEFT_SHIFT  &sk LEFT_GUI     &sk LEFT_ALT  &sk LEFT_CONTROL
-&bt BT_CLR  &defbt0       &btmac1       &bt BT_SEL 2  &bt BT_SEL 3  &winshot  &kp SCROLLLOCK  &kp PAUSE_BREAK  &sys_reset    &bootloader
+&bt BT_CLR  &defbt0       &btmac1       &bt BT_SEL 2  &bt BT_SEL 3  &winshot  &kp SCROLLLOCK  &kp PAUSE_BREAK  &none         &none
                                         &kp C_PLAY    &kp C_STOP    &none     &none
             >;
         };
@@ -193,7 +205,7 @@
             bindings = <
 &kp F1      &kp F2        &kp F3        &kp F4        &kp F5        &kp F6    &kp F7          &kp F8            &kp F9        &kp F10
 &kp C_PREV  &kp C_VOL_DN  &kp C_VOL_UP  &kp C_NEXT    &kp F11       &kp F12   &sk LEFT_SHIFT  &sk LEFT_CONTROL  &sk LEFT_ALT  &sk LEFT_GUI
-&bt BT_CLR  &defbt0       &btmac1       &bt BT_SEL 2  &bt BT_SEL 3  &vidshot  &kp SCROLLLOCK  &kp PAUSE_BREAK   &sys_reset    &bootloader
+&bt BT_CLR  &defbt0       &btmac1       &bt BT_SEL 2  &bt BT_SEL 3  &vidshot  &kp SCROLLLOCK  &kp PAUSE_BREAK   &none         &none
                                         &kp C_PLAY    &kp C_STOP    &none     &none
             >;
         };
@@ -203,8 +215,8 @@
             bindings = <
 &kp N1        &kp N2        &kp N3            &kp N4          &kp N5     &kp N6          &kp N7                &kp N8                 &kp N9            &kp N0
 &sk LEFT_GUI  &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &kp EQUAL  &kp LEFT_BRACE  &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACE   &kp SEMICOLON
-&kp LG(Z)     &kp LG(LS(Z))  &trans           &to 0           &to 1      &kp LESS_THAN   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &kp BACKSLASH
-                                              &none           &none      &kp MINUS       &kp UNDERSCORE
+&kp LG(Z)     &kp LG(LS(Z))  &trans           &trans          &trans      &kp LESS_THAN   &kp LBKT              &kp RBKT               &kp GREATER_THAN  &kp BACKSLASH
+                                              &none           &mo 7      &kp MINUS       &kp UNDERSCORE
             >;
         };
 
@@ -214,7 +226,17 @@
 &kp EXCLAMATION  &kp AT_SIGN   &kp HASH          &kp DOLLAR      &kp PERCENT  &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp EQUAL  &kp PLUS
 &sk LEFT_GUI     &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &trans       &kp LEFT   &kp DOWN       &kp UP        &kp RIGHT  &kp COLON
 &trans           &kp LG(X)     &kp LG(C)         &kp LG(V)       &trans       &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &kp PIPE
-                                                 &none           &none        &kp ENTER  &kp EQUAL
+                                                 &mo 6           &none        &kp ENTER  &kp EQUAL
+            >;
+        };
+
+        system {
+            display-name = "System";
+            bindings = <
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+&none  &none  &none  &to 0  &to 1    &none  &none  &none  &none  &none
+                     &none  &none    &none  &none
             >;
         };
     };

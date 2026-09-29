@@ -173,7 +173,7 @@
             bindings = <
 &kp EXCLAMATION   &kp AT_SIGN   &kp HASH      &kp DOLLAR      &kp PERCENT  &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp EQUAL  &kp PLUS
 &sk LEFT_CONTROL  &sk LEFT_ALT  &sk LEFT_GUI  &sk LEFT_SHIFT  &trans       &kp LEFT   &kp DOWN       &kp UP        &kp RIGHT  &kp COLON
-&kp TILDE         &kp LC(X)     &kp LC(C)     &kp LC(V)       &trans       &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &kp PIPE
+&trans            &kp LC(X)     &kp LC(C)     &kp LC(V)       &trans       &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &kp PIPE
                                               &none           &none        &kp ENTER  &kp EQUAL
             >;
         };
@@ -213,7 +213,7 @@
             bindings = <
 &kp EXCLAMATION  &kp AT_SIGN   &kp HASH          &kp DOLLAR      &kp PERCENT  &kp CARET  &kp AMPERSAND  &kp ASTERISK  &kp EQUAL  &kp PLUS
 &sk LEFT_GUI     &sk LEFT_ALT  &sk LEFT_CONTROL  &sk LEFT_SHIFT  &trans       &kp LEFT   &kp DOWN       &kp UP        &kp RIGHT  &kp COLON
-&kp TILDE        &kp LG(X)     &kp LG(C)         &kp LG(V)       &trans       &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &kp PIPE
+&trans           &kp LG(X)     &kp LG(C)         &kp LG(V)       &trans       &kp HOME   &kp PAGE_DOWN  &kp PAGE_UP   &kp END    &kp PIPE
                                                  &none           &none        &kp ENTER  &kp EQUAL
             >;
         };
